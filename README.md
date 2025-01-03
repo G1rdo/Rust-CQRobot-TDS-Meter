@@ -1,5 +1,8 @@
 cq-robot-ocean-tds-meter
 ========================
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+cargo build -Z build-std=core --target avr-specs/avr-atmega328p.json
+or else it won't work
 
 Rust project for the _Arduino Uno_.
 

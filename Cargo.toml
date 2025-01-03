@@ -2,7 +2,7 @@
 name = "cq-robot-ocean-tds-meter"
 version = "0.1.0"
 authors = ["g0rdo"]
-edition = "2024"
+edition = "2021"
 license = "MIT"
 
 [[bin]]
@@ -11,11 +11,17 @@ test = false
 bench = false
 
 [dependencies]
-panic-halt = "0.2.0"
+panic-halt = "1.0.0"
 ufmt = "0.2.0"
 nb = "1.1.0"
 embedded-hal = "1.0"
-libudev-sys = "0.1.4"
+avr-device = "0.5.4"
+#libm = "0.2.11" # Round + square and cube roots because no STD
+#cortex-m-semihosting = "0.5.0"
+
+#conv = "0.3.3" # Converting f64 to i64 because "as" causes avr-gcc fail
+#libudev-sys = "0.1.4"
+#libudev-sys = "=0.1.4"
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"
