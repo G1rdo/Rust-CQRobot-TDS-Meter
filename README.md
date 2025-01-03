@@ -1,4 +1,4 @@
-CQRobot-TDS-Meter
+Rust-CQRobot-TDS-Meter
 ========================
 This is a driver for the CQRobot TDS (Total Dissolved Solids) Meter, writen in Rust.
 
