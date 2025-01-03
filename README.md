@@ -1,7 +1,6 @@
 cq-robot-ocean-tds-meter
 ========================
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 cargo build -Z build-std=core --target avr-specs/avr-atmega328p.json
 or else it won't work
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -24,14 +23,9 @@ Rust project for the _Arduino Uno_.
 [`ravedude`]: https://crates.io/crates/ravedude
 
 ## License
-Licensed under either of
-
- - Apache License, Version 2.0
-   ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
+Licensed under
  - MIT license
    ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
-
-at your option.
 
 ## Contribution
 Unless you explicitly state otherwise, any contribution intentionally submitted
