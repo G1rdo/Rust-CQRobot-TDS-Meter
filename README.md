@@ -1,5 +1,7 @@
 cq-robot-ocean-tds-meter
 ========================
+This is a driver for the CQRobot TDS (Total Dissolved Solids) Meter, writen in Rust.
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
 cargo build -Z build-std=core --target avr-specs/avr-atmega328p.json
