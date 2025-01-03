@@ -2,19 +2,13 @@ cq-robot-ocean-tds-meter
 ========================
 This is a driver for the CQRobot TDS (Total Dissolved Solids) Meter, writen in Rust.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-
-cargo build -Z build-std=core --target avr-specs/avr-atmega328p.json
-or else it won't work
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 Rust project for the _Arduino Uno_.
 
 ## Build Instructions
 1. Install prerequisites as described in the [`avr-hal` README] (`avr-gcc`, `avr-libc`, `avrdude`, [`ravedude`]).
 
-2. Run `cargo build` to build the firmware.
+2. Run `cargo build` to build the firmware (cargo build -Z build-std=core --target avr-specs/avr-atmega328p.json
+or else it won't work).
 
 3. Run `cargo run` to flash the firmware to a connected board.  If `ravedude`
    fails to detect your board, check its documentation at
