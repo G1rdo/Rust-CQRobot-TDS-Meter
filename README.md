@@ -11,7 +11,7 @@ I originally wrote this to see if writing the meter code for my main project, [t
 
 ![image](https://github.com/user-attachments/assets/1f733e9f-2b33-4e72-840f-e6e4f913f777)
 
-[Total Dissolved Solids - TDS, Premier Water Technologies](https://www.premierwatermn.com/water-quality/water-contaminants/total-dissolved-solids/)
+Image: [Total Dissolved Solids - TDS, Premier Water Technologies](https://www.premierwatermn.com/water-quality/water-contaminants/total-dissolved-solids/)
 
 
 ## Build Instructions
