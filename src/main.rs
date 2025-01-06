@@ -44,16 +44,18 @@ fn put_console(console: Console) {
     })
 }
 // End of avr-hal code
-macro_rules! choose_voltage_pin {
+
+// This macro compiles but when used stops values from being printed for unknown reasons.
+/*macro_rules! choose_voltage_pin {
     ($pin:ident) => {
         arduino_hal::pins!(arduino_hal::Peripherals::take().unwrap()).$pin.into_analog_input(&mut Adc::new(arduino_hal::Peripherals::take().unwrap().ADC, Default::default()))
     }
-} 
+} */
 
 fn analog_to_voltage(analogread: i64, temperaturex100: i64) -> i64{
     let voltageread: i64 = (analogread * 484 + 5000) /  1000 as i64; // Returns 100x the voltage read
-    let compensationcoefficient = 100 + 2 * (temperaturex100 - 25000); // Gets a coefficient to compensate for temperature in TDS
-    let compensatedvoltage = voltageread / compensationcoefficient; // Uses the coefficient to compensate
+    let compensationcoefficient = 100 + 2 * (temperaturex100 - 2500); // Gets a coefficient to compensate for temperature in TDS
+    let compensatedvoltage = 100*voltageread / compensationcoefficient; // Uses the coefficient to compensate
     compensatedvoltage
 }
 
@@ -69,13 +71,14 @@ fn main() -> ! {
 
     let temperatureincelsius: i64 = 25; // Declare the temperature that the meter is recording data at
     
-    let voltagepin = choose_voltage_pin!(a0);
+    //let voltagepin = choose_voltage_pin!(a0);
+    let voltagepin = pins.a0.into_analog_input(&mut adc);
     loop {
         let voltageread: i64 = voltagepin.analog_read(&mut adc).into(); // Read from the analog voltage pin
-        print!("Analog Read: {} ", voltageread);
+        //print!("Analog Read: {} ", voltageread);
         let compensatedvoltage: i64 = analog_to_voltage(voltageread, temperatureincelsius*100); // Using the analog read and the temperature return real voltage
 
-        print!("Compensated Voltage: {} (100x higher than real voltage)", compensatedvoltage); // Should only ever be between 0 and 230 as per CQrobot specs (0-2.3 V).
+        //print!("Compensated Voltage: {} (100x higher than real voltage)", compensatedvoltage); // Should only ever be between 0 and 230 as per CQrobot specs (0-2.3 V).
 
         let tdsvalue = ((133 * compensatedvoltage * compensatedvoltage * compensatedvoltage) / 1000000 - 
                         (256 * compensatedvoltage * compensatedvoltage) / 10000 + 
